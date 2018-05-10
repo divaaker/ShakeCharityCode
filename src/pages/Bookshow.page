@@ -1,7 +1,0 @@
-<apex:page standardController="Book__c" recordSetVar="Book">
-  <apex:pageBlock >
-  <apex:pageBlockTable value="{!Book}" var="bo">
-      <apex:column value="{!bo.Book_Description__c}"/>
-  </apex:pageBlockTable>
-  </apex:pageBlock>>
-</apex:page>
