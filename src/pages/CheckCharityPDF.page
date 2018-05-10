@@ -1,0 +1,49 @@
+<apex:page sidebar="false" showHeader="false" renderAs="pdf" standardController="Account">
+  
+  <apex:form >
+
+       <div class="border" style="margin-left:2%">
+          <apex:image id="logo1" style="width: 40%;" url="{!$Resource.CheckCharity}"/><br/><br/><br/>
+          <p style="Color:#00659e;font-size: 9pt;font-weight:bold;">{!Account.Name}</p>
+          <div style="font-size: 8pt;">{!Account.BillingStreet}<br/>{!Account.BillingCity}, {!Account.BillingState}&nbsp;{!Account.BillingPostalCode} </div>
+          <div style="float:right;margin-right: 5%;margin-top: -1%;font-weight: bold;font-size: 8pt;">Foundation status Code: Not Availbale</div><br/>
+          <div style="border: 1px solid black;width: 96%;">
+          <div style="background:#00659e;color:white;font-size: 8pt;">IRS Publication 78 Details</div>
+          <div style="font-size: 8pt;margin-top:1%;margin-left:1%">Organization Name <div style="margin-top:-13px;margin-left: 40%;">{!Account.Name}</div></div>
+          <div style="font-size: 8pt;margin-top:1%;margin-left:1%">EIN <div style="margin-top:-13px;margin-left: 40%;">{!Account.EIN__c}</div></div>
+          <div style="font-size: 8pt;margin-top:1%;margin-left:1%">Location <div style="margin-top:-13px;margin-left: 40%;">{!Account.BillingCity}, {!Account.BillingState}</div></div>
+          <div style="font-size: 8pt;margin-top:1%;margin-left:1%">Deductibility Status Description <div style="margin-top:-13px;margin-left: 40%;">{!Account.Deductablity_Status_Desacription__c}</div></div>
+          <div style="font-size: 8pt;margin-top:1%;margin-left:1%">Most Recent IRS Publication 78 <div style="margin-top:-13px;margin-left: 40%;">{!Account.Most_Recent_Pub_78__c}</div></div>
+          <div style="font-size: 8pt;margin-top:1%;margin-left:1%;margin-bottom:1%">Verified with Most Recent Internal Revenue Bulletin <div style="margin-top:-13px;margin-left: 40%;">{!Account.Most_Recent_IRB__c}</div></div>
+          </div><br/>
+          <div style="border: 1px solid black;width: 96%;">
+          <div style="background:#00659e;color:white;font-size: 8pt;">IRS Business Master File Details</div>
+          <div style="font-size: 8pt;margin-top:1%;margin-left:1%">Organization Name <div style="margin-top:-13px;margin-left: 40%;">{!Account.Name}</div></div>
+          <div style="font-size: 8pt;margin-top:1%;margin-left:1%">EIN <div style="margin-top:-13px;margin-left: 40%;">{!Account.EIN__c}</div></div>
+          <div style="font-size: 8pt;margin-top:1%;margin-left:1%">Most Recent IRS BMF <div style="margin-top:-13px;margin-left: 40%;">{!Account.Most_Recent_BMF__c}</div></div>
+          <div style="font-size: 8pt;margin-top:1%;margin-left:1%">IRS Subsection <div style="margin-top:-13px;margin-left: 40%;">{!Account.Subsection_Description__c}</div></div>
+          <div style="font-size: 8pt;margin-top:1%;margin-left:1%">Reason for Non-Private Foundation Status <div style="margin-top:-13px;margin-left: 40%;">{!Account.Foundation_Status__c}</div></div>
+          <div style="font-size: 8pt;margin-top:1%;margin-left:1%;margin-bottom:1%">Ruling Date <div style="margin-top:-13px;margin-left: 40%;">{!Account.Ruling_Month__c }/{!Account.Ruling_Year__c }</div></div>
+          <div style="font-size: 8pt;margin-top:1%;margin-left:1%;margin-bottom:1%">This organization was not included in the Office of Foreign Assets Control Specially Designated Nationals (SDN) list.</div>
+          </div>
+          <p style="font-size: 8pt;margin-top:1%;margin-left:1%;margin-bottom:1%">On September 8, 2011, the IRS issued regulations which eliminated the advance ruling process for a section 501(c)(3) organization. Learn more</p>
+          <hr style="display: block;height: 1px;border: 0;border-top: 1px solid #ccc;margin: 1em 0;padding: 0;width: 96%;color:#00659e;"/>
+          <p  style="font-size: 8pt;margin-top:1%;margin-left:1%;margin-bottom:1%">IRS Revenue Procedure 2011-33 allows grantors to rely on third-party resources, such as GuideStar Charity Check, to obtain required Business Master File (BMF) data concerning a potential grantee's public charity classification under section 509 (a) (1), (2) or (3).</p>
+          <hr style="display: block;height: 1px;border: 0;border-top: 1px solid #ccc;margin: 1em 0;padding: 0;width: 96%;color:#00659e;"/>
+          <p  style="font-size: 8pt;margin-top:1%;margin-left:1%;margin-bottom:1%;font-weight:bold">GuideStar Charity Check Data Sources</p>
+          <li style="font-size: 8pt;margin-top:1%;margin-left:1%;margin-bottom:1%;">GuideStar acquires all IRS data directly from the Internal Revenue Service</li>
+          <li style="font-size: 8pt;margin-top:1%;margin-left:1%;margin-bottom:1%;">IRS Publication 78 (Cumulative List of Organizations) lists organizations that have been recognized by the Internal Revenue Service as eligible to receive tax-deductible
+contributions</li>
+          <li style="font-size: 8pt;margin-top:1%;margin-left:1%;margin-bottom:1%;">The IRS Internal Revenue Bulletin (IRB) lists changes in charitable status since the last Publication 78 release. Between the release of IRS Publication 78 and the
+subsequent IRS Internal Revenue Bulletin, the IRB date will reflect the most recent release date of IRS Publication 78.</li>
+          <li style="font-size: 8pt;margin-top:1%;margin-left:1%;margin-bottom:1%;">The IRS Business Master File lists approximately 1.7 million nonprofits registered with the IRS as tax-exempt organizations.</li>
+          <li style="font-size: 8pt;margin-top:1%;margin-left:1%;margin-bottom:1%;">The IRS Automatic Revocation of Exemption List contains organizations that have had their federal tax-exempt status automatically revoked for failing to file an annual
+return or notice with the IRS for three consecutive years.</li>
+          <li style="font-size: 8pt;margin-top:1%;margin-left:1%;margin-bottom:1%;">The Foundation Status Code is a value derived by mapping the codes found on the 990PF filing instructions to the corresponding codes in the IRS BMF. Note that not all
+codes are able to be mapped due to insufficient data.</li>
+          <li style="font-size: 8pt;margin-top:1%;margin-left:1%;margin-bottom:1%;">The Office of Foreign Assets Control (OFAC) Specially Designated Nationals (SDN) list organizations that are owned or controlled by targeted individuals, groups, and
+entities, such as terrorists or narcotics traffickers.Their assets are blocked and U.S. persons are generally prohibited from dealing with them.</li>  
+          <hr style="display: block;height: 1px;border: 0;border-top: 1px solid #ccc;margin: 1em 0;padding: 0;width: 96%;color:#00659e;"/>   
+      </div>  
+  </apex:form>
+</apex:page>

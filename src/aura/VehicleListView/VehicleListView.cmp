@@ -1,0 +1,40 @@
+<aura:component controller="VehicleListController"><!--Server-Side/Apex Controller-->
+ 
+    <!--
+    /**
+     * Webkul Software.
+     *
+     * @category  Webkul
+     * @author    Webkul
+     * @copyright Copyright (c) 2010-2016 Webkul Software Private Limited (https://webkul.com)
+     * @license   https://store.webkul.com/license.html
+     */
+    -->
+ 
+    <aura:attribute name="vehicles" type="Account[]"/><!--List Of Vehicles-->
+    <aura:handler name="init" value="{!this}" action="{!c.getVehicle}" /><!--Client-side Controller-->
+    <table class="slds-table slds-table--bordered slds-max-medium-table--stacked-horizontal"><!--Table must be responsive-->
+        <thead>
+            <tr class="slds-text-heading--label ">
+                <th class="" scope="col">Account Name</th>
+                <th class="slds-is-sortable" scope="col">Account Number</th>
+                <th class="slds-is-sortable" scope="col">Phone</th>
+                <th class="slds-is-sortable" scope="col">Type</th>
+                <th class="slds-is-sortable" scope="col">Created Date</th>                
+            </tr>  
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.vehicles}" var="vehicle"><!--Dynamic Listing of Vehicles-->
+                <tr class="slds-hint-parent">
+                    <td class="" data-label="Vehicle Name" >
+                        <a href="{! '#/sObject/' + vehicle.Id + '/view'}">{!vehicle.Name}</a>
+                    </td>
+                    <td data-label="Number Of Seats" style="padding-left:0;"><ui:outputNumber value="{!vehicle.AccountNumber}" /></td>
+                    <td data-label="License PLate" style="padding-left:0;">{!vehicle.Phone}</td>
+                    <td data-label="License Expiration Date" style="padding-left:0;">{!vehicle.Type}</td>
+                    <td data-label="Fuel" style="padding-left:0;">{!vehicle.CreatedDate}</td>                
+                </tr>
+            </aura:iteration>
+        </tbody>
+    </table>  
+</aura:component>

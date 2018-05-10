@@ -1,0 +1,19 @@
+<apex:page sidebar="false" >
+    <apex:includeLightning />
+
+    <div id="lightning" />
+
+    <script>
+        $Lightning.use("c:VehicleListViewApp", function() {
+          $Lightning.createComponent("c:VehicleListView",
+          { label : "Press Me!" },
+          "lightning",
+          function(cmp) {
+            // do some stuff
+          });
+        });
+    </script>
+    <apex:form >
+    </apex:form>
+    
+</apex:page>
